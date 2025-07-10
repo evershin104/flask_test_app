@@ -63,7 +63,7 @@ Body: {"text": "плохо"}
 
 curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
   -H "Content-Type: application/json" \
-  -d '{"text": "хорошо"}'
+  -d '{"text": "плохо"}'
 
 
 Response:
@@ -82,7 +82,7 @@ Body: {"not_text": "плохо"}
 
 curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
   -H "Content-Type: application/json" \
-  -d '{"text": "хорошо"}'
+  -d '{"not_text": "плохо", "text": "плохо"}'
 
 
 Response:
@@ -108,7 +108,7 @@ Body: {"not_text": "плохо"}
 
 curl -X POST http://127.0.0.1:5000/api/v1/reviews/ \
   -H "Content-Type: application/json" \
-  -d '{"text": "хорошо"}'
+  -d '{"not_text": "плохо"}'
 
 
 Response:
@@ -130,7 +130,6 @@ Response:
 ### 200 Ok
 ```shell
 Endpoint - http://127.0.0.1:5000/api/v1/reviews
-Body: {"text": "плохо"}
 
 curl -X GET "http://127.0.0.1:5000/api/v1/reviews?sentiment=positive"
 
@@ -157,7 +156,6 @@ Response:
 ### 200 Ok, фильтрация (sentiment only)
 ```shell
 Endpoint - http://127.0.0.1:5000/api/v1/reviews?sentiment=positive
-Body: {"text": "плохо"}
 
 curl -X GET "http://127.0.0.1:5000/api/v1/reviews"
 
@@ -184,7 +182,6 @@ Response:
 ### 200 Ok, фильтрация + страницы (sentiment only)
 ```shell
 Endpoint - http://127.0.0.1:5000/api/v1/reviews?sentiment=positive&page=2
-Body: {"text": "плохо"}
 
 curl -X GET "http://127.0.0.1:5000/api/v1/reviews"
 
